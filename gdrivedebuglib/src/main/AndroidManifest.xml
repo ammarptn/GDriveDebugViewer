@@ -3,7 +3,9 @@
           package="com.ammarptn.debug.gdrive.lib">
 
     <application>
-        <activity android:name=".GDriveDebugViewActivity">
+        <activity
+                android:name=".GDriveDebugViewActivity"
+                android:screenOrientation="portrait">
         </activity>
     </application>
 

@@ -1,6 +1,6 @@
 package com.ammarptn.debug.gdrive.lib.ui.gdrivedebugview
 
-import android.content.Context
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,21 +9,17 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ammarptn.debug.gdrive.lib.R
-import com.ammarptn.debug.gdrive.lib.ui.gdrivedebugview.viewObject.DriveItem
-import com.bumptech.glide.Glide
+import com.ammarptn.debug.gdrive.lib.ui.gdrivedebugview.viewObject.RecycleViewBaseItem
+import java.util.*
 
 
-import java.io.LineNumberReader
-import java.util.ArrayList
-
-
-class DriveListAdapter( recycleItemArrayList: ArrayList<DriveItem>, internal var callback: addOnClickListener) :
+class DriveListAdapter( recycleItemArrayListDrive: ArrayList<RecycleViewBaseItem>, internal var callback: addOnClickListener) :
     RecyclerView.Adapter<DriveListAdapter.DriveListViewHolder>() {
-    internal var recycleItemArrayList = ArrayList<DriveItem>()
+    internal var recycleItemArrayList = ArrayList<RecycleViewBaseItem>()
 
 
     init {
-        this.recycleItemArrayList = recycleItemArrayList
+        this.recycleItemArrayList = recycleItemArrayListDrive
 
     }
 
@@ -44,17 +40,19 @@ class DriveListAdapter( recycleItemArrayList: ArrayList<DriveItem>, internal var
 
     override fun onBindViewHolder(holder: DriveListViewHolder, position: Int) {
 
-        holder.title.text = recycleItemArrayList[position].fileName
-        if (recycleItemArrayList[position].isFolder) {
-            Glide.with(holder.icon.context).load(R.drawable.ic_folder_vd).into(holder.icon)
-        } else {
-            Glide.with(holder.icon.context).load(R.drawable.ic_file_vd).into(holder.icon)
+//        holder.title.text = recycleItemArrayList[position].fileName
+//        if (recycleItemArrayList[position].isFolder) {
+//            Glide.with(holder.icon.context).load(R.drawable.ic_folder_vd).into(holder.icon)
+//        } else {
+//            Glide.with(holder.icon.context).load(R.drawable.ic_file_vd).into(holder.icon)
+//
+//        }
+//
+//        holder.layout.setOnClickListener {
+//            callback.onClick(holder.adapterPosition)
+//        }
 
-        }
 
-        holder.layout.setOnClickListener {
-            callback.onClick(holder.adapterPosition)
-        }
 
     }
 

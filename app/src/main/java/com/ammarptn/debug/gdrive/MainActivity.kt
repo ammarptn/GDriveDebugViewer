@@ -13,5 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         val openActivity = Intent(applicationContext, GDriveDebugViewActivity::class.java)
         startActivity(openActivity)
+        finish()
     }
 }

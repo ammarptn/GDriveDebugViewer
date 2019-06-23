@@ -4,9 +4,9 @@ class DriveItemType {
 
     companion object {
 
-        val DRIVE_BACK_BUTTON_TYPE = 0
-        val DRIVE_FOLDER_TYPE = 1
-        val DRIVE_FILE_TYPE = 2
+        val DRIVE_ACTION_TYPE = 0
+        val DRIVE_ITEM_TYPE = 1
+
     }
 
 }
