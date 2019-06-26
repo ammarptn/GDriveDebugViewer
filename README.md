@@ -46,13 +46,13 @@ Or Read the article about how to integrate Google drive Rest API with your andro
 
 #Example
 Create Folder
-![create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/create_folder.jpg    "create Folder")
+![create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/create_folder.jpg "create Folder" =250x)
 
 Upload file from you phone or create folder
-![Upload file and create folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/upload_and_create_folder.jpg    "upload file and create folder")
+![Upload file and create folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/upload_and_create_folder.jpg    "upload file and create folder" =250x)
 
 View File info and delete
-![view file info and delete](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/file_info_and_delete.jpg    "View file info and delete")
+![view file info and delete](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/file_info_and_delete.jpg "View file info and delete" =250x)
 
 
 
