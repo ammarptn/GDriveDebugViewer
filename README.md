@@ -45,9 +45,13 @@ Or Read the article about how to integrate Google drive Rest API with your andro
         startActivity(openActivity);
     
 
+View Folder and File
+
+![View Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src1.png    "view file and folder" )  
+
 Create Folder
 
-![Create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src3.png    "upload file and create folder" )  
+![Create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src3.png    "create folder" )  
 
 Upload file from you phone or create folder
 
