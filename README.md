@@ -53,7 +53,7 @@ Upload file from you phone or create folder
 
 ![Upload file and create folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/upload_and_create_folder.png    "upload file and create folder" )  
 
-View File info and delete
+View File info, download and delete
 
 ![view file info and delete](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/file_info_and_delete.png "View file info and delete" )  
 

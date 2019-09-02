@@ -42,6 +42,10 @@ class GDriveDebugViewActivity : AppCompatActivity(),FileInfoDialogFragment.OnFra
         fragment.onDelete(driveId)
     }
 
+    override fun onDownload(driveId: String) {
+        fragment.onDownload(driveId)
+    }
+
     override fun onCreateFolderDialog(folderName: String) {
         fragment.onCreateFolder(folderName)
     }

@@ -68,6 +68,11 @@ class FileInfoDialogFragment : DialogFragment() {
             dismiss()
         }
 
+        rootView.download.setOnClickListener {
+            listener?.onDownload(driveId!!)
+            dismiss()
+        }
+
 
 
         return rootView
@@ -92,6 +97,7 @@ class FileInfoDialogFragment : DialogFragment() {
     interface OnFragmentInteractionListener {
 
         fun onDelete(driveId: String)
+        fun onDownload(driveId: String)
     }
 
     companion object {

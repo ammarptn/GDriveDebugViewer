@@ -32,6 +32,7 @@ import com.google.android.gms.drive.Drive
 import com.google.api.client.http.InputStreamContent
 import kotlinx.android.synthetic.main.gdrive_debug_view_fragment.*
 import kotlinx.android.synthetic.main.gdrive_debug_view_fragment.view.*
+import java.io.File
 import java.text.DecimalFormat
 
 
@@ -64,18 +65,19 @@ class GdriveDebugViewFragment : Fragment() {
         rootView.folderList.layoutManager = GridLayoutManager(context, 4)
 
 
-        adapter = DriveItemListAdapter(recycleItemArrayList, object : DriveItemListAdapter.addClickListener {
+        adapter = DriveItemListAdapter(recycleItemArrayList, object :
+            DriveItemListAdapter.addClickListener {
             override fun onFileLongClick(position: Int) {
 
                 val driveItem = recycleItemArrayList[position] as DriveItem
-                val infoDialogFragment = FileInfoDialogFragment.newInstance(driveItem.driveId!!, drivePathHolder.getPath(), driveItem.mimeType!!, driveItem.title!!, "Size: "+driveItem.fileSize!!.toLong().bytesToMeg(), "Last Update:"+driveItem.lastUpdate!!)
+                val infoDialogFragment = FileInfoDialogFragment.newInstance(driveItem.driveId!!, drivePathHolder.getPath(), driveItem.mimeType!!, driveItem.title!!, "Size: " + driveItem.fileSize!!.toLong().bytesToMeg(), "Last Update:" + driveItem.lastUpdate!!)
                 infoDialogFragment.show(childFragmentManager, "driveInfoDialog")
 
             }
 
             override fun onFolderLongClick(position: Int) {
                 val driveItem = recycleItemArrayList[position] as DriveItem
-                val infoDialogFragment = FileInfoDialogFragment.newInstance(driveItem.driveId!!, drivePathHolder.getPath(), driveItem.mimeType!!, driveItem.title!!, driveItem.fileSize!!.toLong().bytesToMeg(), "Last Update:"+driveItem.lastUpdate!!)
+                val infoDialogFragment = FileInfoDialogFragment.newInstance(driveItem.driveId!!, drivePathHolder.getPath(), driveItem.mimeType!!, driveItem.title!!, driveItem.fileSize!!.toLong().bytesToMeg(), "Last Update:" + driveItem.lastUpdate!!)
                 infoDialogFragment.show(childFragmentManager, "driveInfoDialog")
 
             }
@@ -351,16 +353,17 @@ class GdriveDebugViewFragment : Fragment() {
                     val inputStreamContent = InputStreamContent(null, contentResolver.openInputStream(uri))
 
 
-                    driveServiceHelper.uploadFile(metadata, inputStreamContent).addOnSuccessListener {
-                        rootView.upload_progress_bar.visibility = View.GONE
-                        if (drivePathHolder.last()?.driveId != null) {
+                    driveServiceHelper.uploadFile(metadata, inputStreamContent)
+                        .addOnSuccessListener {
+                            rootView.upload_progress_bar.visibility = View.GONE
+                            if (drivePathHolder.last()?.driveId != null) {
 
-                            queryDrive(drivePathHolder.last()?.driveId)
+                                queryDrive(drivePathHolder.last()?.driveId)
 
-                        } else {
-                            queryDrive(null)
+                            } else {
+                                queryDrive(null)
+                            }
                         }
-                    }
 
 
                 }
@@ -406,12 +409,22 @@ class GdriveDebugViewFragment : Fragment() {
 
     fun onCreateFolder(folderName: String) {
         progress_bar.visibility = View.VISIBLE
-        driveServiceHelper.createFolder(folderName, drivePathHolder.last()?.driveId).addOnSuccessListener {
-            queryDrive(drivePathHolder.last()?.driveId)
+        driveServiceHelper.createFolder(folderName, drivePathHolder.last()?.driveId)
+            .addOnSuccessListener {
+                queryDrive(drivePathHolder.last()?.driveId)
 //            drivePathHolder.add(DriveHolder(it.id, folderName))
 //            updateTitle()
 
-        }
+            }
+    }
+
+    fun onDownload(driveId: String) {
+        rootView.progress_bar.visibility = View.VISIBLE
+        driveServiceHelper.downloadFile(File(context!!.filesDir!!, "test.jpg"), driveId)
+            .addOnSuccessListener {
+                Toast.makeText(context, "download complete", Toast.LENGTH_SHORT).show()
+                rootView.progress_bar.visibility = View.GONE
+            }
     }
 
 }
