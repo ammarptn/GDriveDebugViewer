@@ -22,7 +22,7 @@ Step 2. Add the dependency
 	
              // Just add it when you need to debug your file on Google Drive
              // You can remove it when your app go live
-            implementation 'com.github.ammarptn:GDriveDebugViewer:0.1.1'
+            implementation 'com.github.ammarptn:GDriveDebugViewer:0.1.2'
 	}
 
 
@@ -47,15 +47,15 @@ Or Read the article about how to integrate Google drive Rest API with your andro
 
 Create Folder
 
-![Create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/create_folder.png    "upload file and create folder" )  
+![Create Folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src3.png    "upload file and create folder" )  
 
 Upload file from you phone or create folder
 
-![Upload file and create folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/upload_and_create_folder.png    "upload file and create folder" )  
+![Upload file and create folder](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src2.png    "upload file and create folder" )  
 
 View File info, download and delete
 
-![view file info and delete](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/file_info_and_delete.png "View file info and delete" )  
+![view file info and delete](https://raw.githubusercontent.com/ammarptn/GDriveDebugViewer/master/doc_img/src4.png "View file info and delete" )  
 
 
 
